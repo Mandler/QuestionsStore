@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
 
+  resources :answers, only: :create
+  resources :questions, only: [:create, :show]
+
   get '/about' => 'home#about'
 
   root 'home#index'
