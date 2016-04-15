@@ -1,0 +1,5 @@
+<% if (flash[:informations]) %>
+    <% flash[:informations].each do |info| %>
+        <%= render 'shared/information', information: info['statement'], information_type: info['type'] %>
+    <% end %>
+<% end %>
