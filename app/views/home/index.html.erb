@@ -1,1 +1,26 @@
-<h1>Welcome</h1>
+<div class="well">
+  <h4>Description</h4>
+  <p>In building...</p>
+</div>
+
+<div class="col-sm-12">
+  <% @questions.each do |question| %>
+      <div class="media">
+        <div class="media-left">
+          <a href="#">
+            Image from Papaerclip
+          </a>
+        </div>
+        <div class="media-body">
+          <h2 class="media-heading">
+            <%= question.email %>
+            <small><%= time_ago_in_words question.created_at %> temu</small>
+          </h2>
+          <%= question.body %> <br>
+          <%= link_to 'Odpowiedzi', question_path(question.id), {class: 'btn btn-sm btn-success'} %>
+        </div>
+      </div>
+      <hr>
+  <% end %>
+  <%= paginate @questions %>
+</div>
